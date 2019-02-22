@@ -235,9 +235,6 @@ public class TextRecognition2Activity extends AppCompatActivity {
                         sb.append(myItem.getValue());
                         sb.append("\n");
                     }
-                    if (sb.toString().equals("aulia")){
-                        Toast.makeText(this, "Ini aul", Toast.LENGTH_SHORT).show();
-                    }
                     // Set text to edit text
                     mResultEt.setText(sb.toString());
                 }
