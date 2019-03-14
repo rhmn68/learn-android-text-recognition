@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "731344690361",
+    "firebase_url": "https://mlkitdemo-a4c6a.firebaseio.com",
+    "project_id": "mlkitdemo-a4c6a",
+    "storage_bucket": "mlkitdemo-a4c6a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:731344690361:android:a7a4b34a19fb296a",
+        "android_client_info": {
+          "package_name": "id.co.coffeecode.learntextrecognitionapps"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "731344690361-gplmb0npi2sfgnpctk7r4nilnldlec4n.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "id.co.coffeecode.learntextrecognitionapps",
+            "certificate_hash": "22777356d758270258ef6ea526f9c51db879d302"
+          }
+        },
+        {
+          "client_id": "731344690361-gdsq3idgs9oq23fqak3s6cd240n24ev2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC28nyN38nfUTwk-g5Y9UXMEK-ejzKLSOA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "731344690361-gdsq3idgs9oq23fqak3s6cd240n24ev2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
