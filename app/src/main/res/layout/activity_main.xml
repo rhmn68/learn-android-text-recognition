@@ -6,21 +6,10 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <com.wonderkiln.camerakit.CameraView
-        android:id="@+id/camera_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
-
-    <id.co.coffeecode.learntextrecognitionapps.helper.GraphicOverlay
-        android:id="@+id/graphic_overlay"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-
-    <Button
-        android:id="@+id/btn_capture"
-        android:layout_width="match_parent"
+    <TextView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="RECOGNIZE"
-        android:layout_alignParentBottom="true"/>
+        android:text="Hello World"
+        android:layout_centerInParent="true"/>
 
 </RelativeLayout>
