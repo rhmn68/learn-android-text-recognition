@@ -28,17 +28,89 @@
                     android:padding="5dp">
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="RESULT"
                         android:textSize="20sp"
                         android:textColor="@color/colorPrimary"/>
 
-                    <TextView
-                        android:id="@+id/tvResult"
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:padding="5dp"/>
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:padding="5dp"
+                            android:textSize="16sp"
+                            android:textColor="@color/colorPrimary"
+                            android:textStyle="bold"
+                            android:text="Email"/>
+
+                        <TextView
+                            android:id="@+id/tvResultEmail"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:padding="5dp"
+                            android:gravity="end"
+                            android:text="Hasil"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:padding="5dp"
+                            android:textSize="16sp"
+                            android:textColor="@color/colorPrimary"
+                            android:textStyle="bold"
+                            android:text="Phone Number"/>
+
+                        <TextView
+                            android:id="@+id/tvResultPhone"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:padding="5dp"
+                            android:gravity="end"
+                            android:text="Hasil"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:padding="5dp"
+                            android:textSize="16sp"
+                            android:textColor="@color/colorPrimary"
+                            android:textStyle="bold"
+                            android:text="Name"/>
+
+                        <TextView
+                            android:id="@+id/tvResultName"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:padding="5dp"
+                            android:gravity="end"
+                            android:text="Hasil"/>
+
+                    </LinearLayout>
 
                 </LinearLayout>
 

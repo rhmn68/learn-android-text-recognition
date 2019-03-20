@@ -36,7 +36,9 @@ public class MainActivity extends AppCompatActivity {
 
     Button btnCaptureImage;
     ImageView ivPreview;
-    TextView tvResult;
+    TextView tvResultPhone;
+    TextView tvResultEmail;
+    TextView tvResultName;
 
     String cameraPermission[];
 
@@ -49,7 +51,9 @@ public class MainActivity extends AppCompatActivity {
 
         btnCaptureImage = findViewById(R.id.btnCaptureImage);
         ivPreview = findViewById(R.id.ivPreview);
-        tvResult = findViewById(R.id.tvResult);
+        tvResultEmail = findViewById(R.id.tvResultEmail);
+        tvResultPhone = findViewById(R.id.tvResultPhone);
+        tvResultName = findViewById(R.id.tvResultName);
 
         btnCaptureImage.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -118,10 +122,6 @@ public class MainActivity extends AppCompatActivity {
                 .addOnSuccessListener(new OnSuccessListener<FirebaseVisionText>() {
                     @Override
                     public void onSuccess(FirebaseVisionText firebaseVisionText) {
-                        Log.d("coba", "hasil : "+firebaseVisionText.getText());
-                        String result = firebaseVisionText.getText();
-                        tvResult.setText(result);
-
                         processIdCard(firebaseVisionText);
                     }
                 })
@@ -135,13 +135,9 @@ public class MainActivity extends AppCompatActivity {
 
     private void processIdCard(FirebaseVisionText firebaseVisionText) {
         List<FirebaseVisionText.TextBlock> blocks = firebaseVisionText.getTextBlocks();
-        StringBuilder result = new StringBuilder();
-        for (FirebaseVisionText.TextBlock block : blocks){
-            result.append(block.getText());
-        }
+        StringBuilder resultPhone = new StringBuilder();
 
         String resultElement;
-        String finalResult = result.toString().trim();
         for (int i = 0; i < blocks.size(); i++){
             List<FirebaseVisionText.Line> lines =blocks.get(i).getLines();
 //            Log.d("coba", "hasil blocks : "+blocks.get(i).getText());
@@ -152,21 +148,17 @@ public class MainActivity extends AppCompatActivity {
                 String resulElementFinal = resultElement.trim();
                 if (Patterns.EMAIL_ADDRESS.matcher(resulElementFinal).matches()){
                     Log.d("coba", "email : "+resulElementFinal);
+                    tvResultEmail.setText(resulElementFinal);
                 }
                 if (Patterns.PHONE.matcher(resulElementFinal).matches()){
                     Log.d("coba", "phone : "+resulElementFinal);
-                }
-                if (Patterns.DOMAIN_NAME.matcher(resulElementFinal).matches()){
-                    Log.d("coba", "domain : "+resulElementFinal);
+                    resultPhone = resultPhone.append(resulElementFinal+"\n");
+                    tvResultPhone.setText(resultPhone);
                 }
                 for (int k = 0; k < elements.size(); k++){
 //                    Log.d("coba", "hasil elements : "+elements.get(k).getText());
                 }
             }
         }
-    }
-
-    private void checkEmail(){
-
     }
 }
