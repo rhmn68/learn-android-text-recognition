@@ -9,6 +9,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Log;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -139,13 +140,33 @@ public class MainActivity extends AppCompatActivity {
             result.append(block.getText());
         }
 
+        String resultElement;
         String finalResult = result.toString().trim();
-
-        Log.d("coba", "hasil from procesID : "+result.toString());
-        if (finalResult.equals("AULIA RAHMAN")){
-           Log.d("coba", "berhasil");
-        }else {
-            Log.d("coba", "gagal");
+        for (int i = 0; i < blocks.size(); i++){
+            List<FirebaseVisionText.Line> lines =blocks.get(i).getLines();
+//            Log.d("coba", "hasil blocks : "+blocks.get(i).getText());
+            for (int j = 0; j < lines.size(); j++){
+                List<FirebaseVisionText.Element> elements =lines.get(j).getElements();
+//                Log.d("coba", "hasil lines : "+lines.get(j).getText());
+                resultElement = lines.get(j).getText();
+                String resulElementFinal = resultElement.trim();
+                if (Patterns.EMAIL_ADDRESS.matcher(resulElementFinal).matches()){
+                    Log.d("coba", "email : "+resulElementFinal);
+                }
+                if (Patterns.PHONE.matcher(resulElementFinal).matches()){
+                    Log.d("coba", "phone : "+resulElementFinal);
+                }
+                if (Patterns.DOMAIN_NAME.matcher(resulElementFinal).matches()){
+                    Log.d("coba", "domain : "+resulElementFinal);
+                }
+                for (int k = 0; k < elements.size(); k++){
+//                    Log.d("coba", "hasil elements : "+elements.get(k).getText());
+                }
+            }
         }
+    }
+
+    private void checkEmail(){
+
     }
 }
