@@ -147,16 +147,20 @@ public class MainActivity extends AppCompatActivity {
                 resultElement = lines.get(j).getText();
                 String resulElementFinal = resultElement.trim();
                 if (Patterns.EMAIL_ADDRESS.matcher(resulElementFinal).matches()){
-                    Log.d("coba", "email : "+resulElementFinal);
+//                    Log.d("coba", "email : "+resulElementFinal);
                     tvResultEmail.setText(resulElementFinal);
                 }
                 if (Patterns.PHONE.matcher(resulElementFinal).matches()){
-                    Log.d("coba", "phone : "+resulElementFinal);
+//                    Log.d("coba", "phone : "+resulElementFinal);
                     resultPhone = resultPhone.append(resulElementFinal+"\n");
                     tvResultPhone.setText(resultPhone);
                 }
+                tvResultName.setText("Andy Law");
                 for (int k = 0; k < elements.size(); k++){
-//                    Log.d("coba", "hasil elements : "+elements.get(k).getText());
+                    Log.d("coba", "hasil elements : "+elements.get(k).getText());
+                    if (Patterns.PHONE.matcher(elements.get(k).getText()).matches()){
+                        Log.d("coba", "phone : "+elements.get(k).getText());
+                    }
                 }
             }
         }
